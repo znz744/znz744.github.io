@@ -19,7 +19,7 @@ $("#rocket").click(function () {
 $("#homelogo").click(function () {
   $("html, body").animate(
     {
-      scrollTop: $(window).height() - 60,
+      scrollTop: $(window).height() - 81,
     },
     1000,
     null
