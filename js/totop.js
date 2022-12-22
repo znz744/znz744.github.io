@@ -20,13 +20,7 @@ $("#homelogo").click(function () {
   const w = $(window).width();
   const h = $(window).height();
   const x = w > 680 ? 81 : 61;
-  $("html, body").animate(
-    {
-      scrollTop: h - x,
-    },
-    1000,
-    null
-  );
+  $("html, body").animate({ scrollTop: h - x }, 1000, null);
   return false;
 });
 
