@@ -6,7 +6,7 @@
   <title>java 8系列之重新认识hashmap | YAKJS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    <meta name="keywords" content="YAKJS|HashMap">
+    <meta name="keywords" content="YAKJS,HashMap">
   
   
   
@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://www.yakjs.com/2016/06/24/Java%208%E7%B3%BB%E5%88%97%E4%B9%8B%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86HashMap/index.html">
 <meta property="og:site_name" content="YAKJS">
 <meta property="og:description" content="本文来自美团点评技术团队： Java 8系列之重新认识HashMap  摘要HashMap是Java程序员使用频率最高的用于映射(键值对)处理的数据类型。随着JDK（Java Developmet Kit）版本的更新，JDK1.8对HashMap底层的实现进行了优化，例如引入红黑树的数据结构和扩容的优化等。本文结合JDK1.7和JDK1.8的区别，深入探讨HashMap的结构实现和功能原理。 简">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.yakjs.com/gallery/HashMap-300x200.png">
 <meta property="article:published_time" content="2016-06-24T03:58:55.000Z">
 <meta property="article:modified_time" content="2022-12-22T06:13:40.215Z">
@@ -111,15 +111,15 @@
             <div class="navbar-collapse collapse">
               <ul class="hnav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
                 
                   <li><div id="search-form-wrap">
 
@@ -158,7 +158,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="/gallery/HashMap-300x200.png" rel="gallery_clbyoz3tp000jaka491ii1ux1">
+      <a class="article-gallery-img fancybox" href="/gallery/HashMap-300x200.png" rel="gallery_clbyrg9gi000k8wa42qhec7hl">
         <img src="/gallery/HashMap-300x200.png" itemprop="image">
       </a>
     
@@ -329,7 +329,7 @@
 <script>
 var a = new Donate({
   title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
-  btnText: 'Donate', // 可选参数，打赏按钮文字
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
   el: document.getElementById('donation_div'),
   wechatImage: '/css/images/WeChanQR.jpg',
   alipayImage: '/css/images/AliPayQR.jpg'
@@ -340,16 +340,16 @@ var a = new Donate({
       <div>
         <ul class="post-copyright">
           <li class="post-copyright-author">
-          <strong>Post author:  </strong>Mr.APIS</a>
+          <strong>本文作者:  </strong>Mr.APIS</a>
           </li>
           <li class="post-copyright-link">
-          <strong>Post link:  </strong>
+          <strong>本文链接:  </strong>
           <a href="/2016/06/24/Java 8系列之重新认识HashMap/" target="_blank" title="Java 8系列之重新认识HashMap">http://www.yakjs.com/2016/06/24/Java 8系列之重新认识HashMap/</a>
           </li>
           <li class="post-copyright-license">
-            <strong>Copyright Notice:   </strong>
-            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-            unless stating additionally.
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
           </li>
          
         </ul>
@@ -370,7 +370,7 @@ var a = new Donate({
 <nav id="article-nav">
   
     <a href="/2016/08/14/%E3%80%90Machine%20Learning%E3%80%91%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E7%AE%80%E6%98%8E%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
           【Machine Learning】机器学习：简明入门指南
@@ -380,7 +380,7 @@ var a = new Donate({
   
   
     <a href="/2016/01/26/Gallery-Example/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">Gallery Example</div>
     </a>
   
@@ -393,7 +393,7 @@ var a = new Donate({
 
   <aside id="toc-sidebar">
     <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
+    <strong class="toc-title">文章目录</strong>
     
         <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">内部实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%AD%97%E6%AE%B5"><span class="nav-number">3.1.</span> <span class="nav-text">存储结构-字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0-%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">功能实现-方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E7%A1%AE%E5%AE%9A%E5%93%88%E5%B8%8C%E6%A1%B6%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%E4%BD%8D%E7%BD%AE"><span class="nav-number">3.2.1.</span> <span class="nav-text">1. 确定哈希桶数组索引位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%88%86%E6%9E%90HashMap%E7%9A%84put%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.2.</span> <span class="nav-text">2. 分析HashMap的put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6"><span class="nav-number">3.2.3.</span> <span class="nav-text">3. 扩容机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">4.</span> <span class="nav-text">线程安全性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK1-8%E4%B8%8EJDK1-7%E7%9A%84%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94"><span class="nav-number">5.</span> <span class="nav-text">JDK1.8与JDK1.7的性能对比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hash%E8%BE%83%E5%9D%87%E5%8C%80%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">5.1.</span> <span class="nav-text">Hash较均匀的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hash%E6%9E%81%E4%B8%8D%E5%9D%87%E5%8C%80%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">5.2.</span> <span class="nav-text">Hash极不均匀的情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol>
     
@@ -413,7 +413,7 @@ var a = new Donate({
 	      <p id="copyRightEn">Copyright &copy; 2012 - 2022 YAKJS All Rights Reserved.</p>
 	      
 	      
-  		   	<p id="copyRightCn">Mr.APIS hold copyright</p>
+  		   	<p id="copyRightCn">Mr.APIS 保留所有权利</p>
   		   
 		</div>
 
