@@ -16,13 +16,15 @@ $("#rocket").click(function () {
   return false;
 });
 
-$("#homelogo").click(function () {
+function scrollToContent() {
   const w = $(window).width();
   const h = $(window).height();
   const x = w > 680 ? 81 : 61;
   $("html, body").animate({ scrollTop: h - x }, 1000, null);
   return false;
-});
+}
+
+$("#homelogo").click(scrollToContent);
 
 var articleW = $("#main>article").css("width");
 
