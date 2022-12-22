@@ -175,7 +175,7 @@
                 var carouselResize = function() {
                   var h = document.body.clientHeight;
                   var w = document.body.clientWidth;
-                  if(location.pathname.includes('/about/')) h = 30
+                  if(location.pathname.includes('/about/')) h = w > 680 ? 27 : 25;
                   var linearTag0 = document.getElementById("linear0");
                   linearTag0.style.width = w + "px";
                   linearTag0.style.height = h + "px";
@@ -194,7 +194,7 @@
                 var carouselResize = function() {
                   var h = document.body.clientHeight;
                   var w = document.body.clientWidth;
-                  if(location.pathname.includes('/about/')) h = 30
+                  if(location.pathname.includes('/about/')) h = w > 680 ? 27 : 25;
                   var linearTag1 = document.getElementById("linear1");
                   linearTag1.style.width = w + "px";
                   linearTag1.style.height = h + "px";
