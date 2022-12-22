@@ -527,7 +527,7 @@ if (typeof jQuery === 'undefined') {
     .on('click.bs.carousel.data-api', '[data-slide-to]', clickHandler)
 
   $(window).on('load', function () {
-    if(location.pathname === '/') scrollToContent(); // 首页滚动到指定位置
+    if(location.pathname === '/' || location.pathname.startsWith('/page/')) scrollToContent(); // 首页滚动到指定位置
     $('[data-ride="carousel"]').each(function () {
       var $carousel = $(this)
       Plugin.call($carousel, $carousel.data())
