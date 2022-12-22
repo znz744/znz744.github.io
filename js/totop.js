@@ -17,9 +17,12 @@ $("#rocket").click(function () {
 });
 
 $("#homelogo").click(function () {
+  const w = $(window).width();
+  const h = $(window).height();
+  const x = w > 680 ? 81 : 61;
   $("html, body").animate(
     {
-      scrollTop: $(window).height() - 81,
+      scrollTop: h - x,
     },
     1000,
     null
