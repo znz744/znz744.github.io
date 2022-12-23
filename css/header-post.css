@@ -27,6 +27,10 @@
 	margin-right: 0px;
 	background-color: transparent;
 	border: 1px solid transparent;
+	cursor: pointer;
+}
+.navbar-toggle:hover{
+	background-color: #ddd;
 }
 
 @media (max-width: 767px) {
@@ -39,7 +43,7 @@
 	}
   	.navbar-collapse {
   		max-height: inherit;
-		background: rgba(48,51,58,0.98);
+		background: rgba(48,51,58,0.96);
 		color: #fff;
 		width: 100%;
 		top: 91px;

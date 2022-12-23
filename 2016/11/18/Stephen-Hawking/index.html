@@ -48,6 +48,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+<script src="/js/fastclick.min.js"></script>
 
   
 <script src="/js/jquery-3.1.1.min.js"></script>
@@ -55,6 +57,10 @@
   
 <script src="/js/bootstrap.js"></script>
 
+
+  <script>
+    $(function() { if(FastClick)FastClick.attach(document.body); });
+  </script>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" >
@@ -93,7 +99,6 @@
           
           <div class="container"> 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -123,7 +128,7 @@
                   <li><div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <!-- <input type="text" class="ins-search-input search-form-input xx" placeholder="" /> -->
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -179,7 +184,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="/gallery/confederate_newspaper.png" rel="gallery_clbzyzd28000xr4a4b9zicgfl">
+      <a class="article-gallery-img fancybox" href="/gallery/confederate_newspaper.png" rel="gallery_clc07xnuq000zd4a4f72p3nm8">
         <img src="/gallery/confederate_newspaper.png" itemprop="image">
       </a>
     
