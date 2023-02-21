@@ -19,7 +19,7 @@
 <meta property="og:description" content="什么是内网穿透">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-22T11:07:08.803Z">
-<meta property="article:modified_time" content="2022-12-22T11:14:09.027Z">
+<meta property="article:modified_time" content="2023-02-21T07:58:24.371Z">
 <meta property="article:author" content="Mr.APIS">
 <meta property="article:tag" content="YAKJS">
 <meta property="article:tag" content="yakjs.com">
@@ -204,7 +204,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>什么是内网穿透</p>
-<p><strong>内网穿透</strong>作为程序员常用的调试手段之一，我们可以通过在个人电脑上运行花生壳或者 frp 等方式，让他人访问我们本地启动的服务，而且这种访问可以不受局域网的限制，当我们使用 <strong>ngrok</strong>(<a target="_blank" rel="noopener" href="https://ngrok.com/">https://ngrok.com/</a>), <strong>frp</strong>(<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp)%E7%AD%89%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E6%97%B6%EF%BC%8C%E4%BD%A0%E6%98%AF%E5%90%A6%E6%9C%89%E5%A5%BD%E5%A5%87%E8%BF%87%E5%AE%83%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F%E6%98%8E%E6%98%8E%E6%B2%A1%E6%9C%89%E5%B0%86%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BB%AC%E7%A9%B6%E7%AB%9F%E6%98%AF%E6%80%8E%E4%B9%88%E9%80%9A%E8%BF%87%E8%BF%99%E7%A7%8D%E7%89%B9%E6%AE%8A%E6%96%B9%E5%BC%8F%E8%AE%A9%E6%89%80%E6%9C%89%E4%BA%BA%E8%AE%BF%E9%97%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%BB%E6%9C%BA%E7%9A%84%EF%BC%9F%E6%9C%AC%E6%96%87%E5%B0%86%E4%BB%A5">https://github.com/fatedier/frp)等开源框架时，你是否有好奇过它神奇的作用？明明没有将服务部署到服务器，程序员们究竟是怎么通过这种特殊方式让所有人访问自己的主机的？本文将以</a> <strong>frp 开源框架</strong>为例，介绍内网穿透的原理。</p>
+<p><strong>内网穿透</strong>作为程序员常用的调试手段之一，我们可以通过在个人电脑上运行花生壳或者 frp 等方式，让他人访问我们本地启动的服务，而且这种访问可以不受局域网的限制，当我们使用 <a target="_blank" rel="noopener" href="https://ngrok.com/"><strong>ngrok</strong></a>, <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp"><strong>frp</strong></a>等开源框架时，你是否有好奇过它神奇的作用？明明没有将服务部署到服务器，程序员们究竟是怎么通过这种特殊方式让所有人访问自己的主机的？本文将以 <strong>frp 开源框架</strong>为例，介绍内网穿透的原理。</p>
 <h2 id="公网-IP-与内网-IP"><a href="#公网-IP-与内网-IP" class="headerlink" title="公网 IP 与内网 IP"></a>公网 IP 与内网 IP</h2><p>能否在公网中访问服务器的决定性因素：公网 IP</p>
 <p>众所周知， IP 地址是每一位使用互联网的网民都会拥有的标识， IP 地址在互联网中起到的作用是定位，通过 IP 地址我们可以精确的定位到所需资源所在的服务器，这是对于一般用户来讲的，而对于程序员而言，我们需要的则是让用户通过 IP 地址定位到我们部署的资源，既然每个互联网用户都拥有 IP 地址，为什么用户无法直接访问部署在个人 PC 上的服务呢？</p>
 <p>事实上，IP 地址分为两种：公网 IP 和内网 IP</p>
@@ -288,7 +288,7 @@
 <p>到这里，我们的 <code>frps</code> 已经成功将公网中接收到的请求转发到 <code>frpc</code> 相应的端口了，这就是一个最简单的请求通过 frp 进行代理转发的流程。</p>
 <p>本文所介绍的内网穿透技术相关的实现方式其实在我们的日常开发生活中有更多的使用场景，当我们深入了解了当前 IP 地址以及内外网的实现方式后，我们不难发现，当我们将内网穿透的图片稍加修改后就成为了我们常用的另一种功能的实现方式(VPN 实现原理)：</p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
-<p>“frp 源码地址(<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp">https://github.com/fatedier/frp</a>)<br>frp 源码阅读与分析(二)：TCP 内网穿透的实现(<a target="_blank" rel="noopener" href="https://jiajunhuang.com/articles/2019_06_19-frp_source_code_part2.md.html">https://jiajunhuang.com/articles/2019_06_19-frp_source_code_part2.md.html</a>)</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp">frp 源码地址</a><br><a target="_blank" rel="noopener" href="https://jiajunhuang.com/articles/2019_06_19-frp_source_code_part2.md.html">frp 源码阅读与分析(二)：TCP 内网穿透的实现</a></p>
 </blockquote>
 
       
