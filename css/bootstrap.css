@@ -6374,12 +6374,14 @@ button.close {
 
 .carousel {
   position: relative;
+  height: 100% !important;
 }
 
 .carousel-inner {
   position: relative;
   width: 100%;
   overflow: hidden;
+  height: 100% !important;
 }
 
 .carousel-inner > .item {
@@ -6387,6 +6389,8 @@ button.close {
   display: none;
   -webkit-transition: 0.6s ease-in-out left;
           transition: 0.6s ease-in-out left;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .carousel-inner > .item > img,
