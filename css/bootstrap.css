@@ -47,9 +47,6 @@ html {
 
 body {
   margin: 0;
-  -moz-user-select: none; 
-  -webkit-user-select: none; 
-  user-select: none; 
 }
 
 a {
@@ -311,7 +308,7 @@ html {
 }
 
 body {
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
