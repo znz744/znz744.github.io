@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="ahrefs-site-verification" content="e249e917095633af770e054230f4a59980f445d4e51b18ecbfdde058f8f0e30e">
+  
+  <title>什么是内网穿透 | YAKJS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="YAKJS,yakjs.com,内网穿透,frp">
+  
+  
+  
+  
+  <meta name="description" content="什么是内网穿透">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是内网穿透">
+<meta property="og:url" content="http://www.yakjs.com/2023/07/06/VHv_902veUBwP5pOTdcMVw/index.html">
+<meta property="og:site_name" content="YAKJS">
+<meta property="og:description" content="什么是内网穿透">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-06T02:40:17.985Z">
+<meta property="article:modified_time" content="2023-02-21T07:58:24.371Z">
+<meta property="article:author" content="Mr.APIS">
+<meta property="article:tag" content="YAKJS">
+<meta property="article:tag" content="yakjs.com">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="YAKJS" type="application/atom+xml">
+  
+
+  
+  <link rel="stylesheet" href="/css/font-awesome.min.css" >
+  <link rel="icon" href="/css/images/mylogo.png">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.png">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/fastclick.min.js"></script>
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <script>
+    $(function() { if(FastClick)FastClick.attach(document.body); });
+  </script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="/">
+                  <img width="100px" height="100px" alt="YAKJS" src="/css/images/mylogo.png">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <!-- <input type="text" class="ins-search-input search-form-input xx" placeholder="" /> -->
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-VHv_902veUBwP5pOTdcMVw" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      什么是内网穿透
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/07/06/VHv_902veUBwP5pOTdcMVw/" class="article-date">
+	  <time datetime="2023-07-06T02:40:17.985Z" itemprop="datePublished">2023-07-06</time>
+	</a>
+
+      
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么是内网穿透</p>
+<p><strong>内网穿透</strong>作为程序员常用的调试手段之一，我们可以通过在个人电脑上运行花生壳或者 frp 等方式，让他人访问我们本地启动的服务，而且这种访问可以不受局域网的限制，当我们使用 <a target="_blank" rel="noopener" href="https://ngrok.com/"><strong>ngrok</strong></a>, <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp"><strong>frp</strong></a>等开源框架时，你是否有好奇过它神奇的作用？明明没有将服务部署到服务器，程序员们究竟是怎么通过这种特殊方式让所有人访问自己的主机的？本文将以 <strong>frp 开源框架</strong>为例，介绍内网穿透的原理。</p>
+<h2 id="公网-IP-与内网-IP"><a href="#公网-IP-与内网-IP" class="headerlink" title="公网 IP 与内网 IP"></a>公网 IP 与内网 IP</h2><p>能否在公网中访问服务器的决定性因素：公网 IP</p>
+<p>众所周知， IP 地址是每一位使用互联网的网民都会拥有的标识， IP 地址在互联网中起到的作用是定位，通过 IP 地址我们可以精确的定位到所需资源所在的服务器，这是对于一般用户来讲的，而对于程序员而言，我们需要的则是让用户通过 IP 地址定位到我们部署的资源，既然每个互联网用户都拥有 IP 地址，为什么用户无法直接访问部署在个人 PC 上的服务呢？</p>
+<p>事实上，IP 地址分为两种：公网 IP 和内网 IP</p>
+<p><strong>内网 IP ：</strong>内网 IP 是用户在使用局域网时，由局域网的网关所分配的 IP 地址，每一个内网 IP 实际上都可以映射到当前所在局域网网关的某一端口（ IPV4 地址通过 NAT 与端口映射方式实现，具体原理下文详解），拥有内网 IP 可以被同一局域网下的其他设备所访问到；</p>
+<p><strong>公网 IP ：</strong>内网的设备想要访问非同一局域网下的资源则必须通过公网 IP ，公网 IP 是没有经过 NAT 转换的由互联网供应商（ISP）提供的最原始的 IP 地址，每一个公网 IP 都可以直接在互联网中被直接定位到。</p>
+<p><strong>一个最简单的例子（以前端开发为例）</strong>：</p>
+<p>当我们使用 webpack-dev-server 来启动一个 node 项目时，我们除了通过 <code>localhost:[&amp;#x7AEF;&amp;#x53E3;&amp;#x53F7;]</code>的方式以外，与我们的开发设备处于同一局域网下的设备可以通过 <code>&amp;#x5185;&amp;#x7F51; IP :[&amp;#x7AEF;&amp;#x53E3;&amp;#x53F7;]</code>的方式对我们的项目进行访问，但当我们使用自己的流量或者连接其他非当前开发设备所在局域网的设备使用 <code>&amp;#x5185;&amp;#x7F51; IP :[&amp;#x7AEF;&amp;#x53E3;&amp;#x53F7;]</code>的方式进行进行访问时，则无法访问。</p>
+<p>原因：</p>
+<p>内网 IP 地址仅在当前局域网下可以被定位并访问到，而当我们想要跨局域网访问时，我们的访问请求则需要先映射为公网 IP 然后访问到另一局域网的公网 IP ，最后由另一局域网的网关将其映射到相应的局域网设备，但我们访问的地址属于局域网中的内网 IP ，因此无法定位到其相应的公网 IP</p>
+<p>综上所述，当我们想要让处于其他局域网下的设备访问到我们本地资源，必不可缺的就是 <strong>公网 IP</strong>。</p>
+<p>相较于内网 IP ，公网 IP 明显比内网 IP 更加有用，为什么不可以人手一个公网 IP 呢？</p>
+<p>尽管 IPV6 的概念在几年前已经被提出，但实际的普及程度并没有很高，现在大部分网络用户使用的依旧是 IPV4 的 IP 地址，这也是限制公网 IP 个数的最大原因。</p>
+<p><strong>IPV4：</strong> IPV4 由 32 位二进制数组成，一共有 2^32 个不同的 IPV4 地址</p>
+<p><strong>IPV6</strong>：IPV6 由 128 位二进制数组成，理论上共有 2^128 个不同的 IPV6 地址</p>
+<p>由此可见， IPV4 地址的个数并不足以满足当前全世界网络用户的人手一个 IP 地址的需求，那么当前的网络为什么可以让这么多用户同时在网络上冲浪呢？</p>
+<p>网络地址转化技术的核心作用在于实现对公网 IP 地址的复用，即所有的内网主机共用同一个 IP 地址，NAT 的实现方式共有三种：</p>
+<ul>
+<li><p>静态转换：将内网 IP 直接转换为公网 IP 地址，形成一一对应的方式</p>
+</li>
+<li><p>动态转换：将内网 IP 地址转换为公网 IP 地址，与静态转换不同的是动态转换会在 IP 池中选择空闲 IP 地址进行转换，即每次同一个内网 IP 对应的公网 IP 会发生改变</p>
+</li>
+<li><p>端口多路复用(PAT 技术)：将内网 IP 与公网 IP 的某一端口进行映射，通过公网 IP 的某一端口访问公网</p>
+</li>
+</ul>
+<p>可以看出以上三种形式中 <strong>端口多路复用(PAT)技术</strong>可以最大程度上缓解 IPV4 地址紧张的现状，也是最为广泛使用的实现方式，三种 NAT 实现方式共同点在于：对于内网用户来说自己对应的公网 IP 是不可知的，就好像我们可以知道自己的门牌号但无法知道自己所在的小区，因此无法准确告诉别人我们的具体地址。</p>
+<h2 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h2><p>在已知了当前内外网工作方式后，我们再来看一看作为程序员常用的技术手段 <strong>内网穿透</strong></p>
+<p>在此之前或许很多人都曾使用过如 <strong>花生壳、ngrok、frp</strong> 等方式在没有服务器的情况下将一些服务部署到网络上让别人使用</p>
+<p>那么内网穿透的原理究竟是怎么样的呢？</p>
+<p>目前市面上主流的内网穿透工具实现的原理如下：</p>
+<p>可见，内网穿透的核心原理在于将外网 IP 地址与内网 IP 地址建立联系，市面上常用的如花生壳工具其核心原理就是依靠一台具有公网 IP 的服务器作为请求的中转站以此来达到从公网访问内网主机的目的。</p>
+<p>当我们启动花生壳的服务时，花生壳会将本地配置好的端口和服务器上的端口进行映射，告知服务器请求转发的路径，花生壳的公网服务器则会监听相应端口的请求，当用户访问花生壳提供的 IP 地址时，花生壳的对应 IP 地址的公网主机将会根据访问的端口映射到相应的内网主机，并通过预先配置好的服务端口将请求转发，以达到访问内网主机相应服务的效果。</p>
+<p>花生壳作为一款商业产品，对于配置端口等一系列工作进行了封装，使得用户可以更快捷的使用内网穿透，但我们在了解原理后完全可以通过一些开源的框架以及一台公网服务器实现对应的内网穿透功能，我们以 <strong>frp</strong> 为例。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;#x670D;&amp;#x52A1;&amp;#x7AEF;&amp;#x8BBE;&amp;#x7F6E;(frps.ini)&amp;#xFF1A;&lt;br&gt;[common]&lt;br&gt;bind_port&amp;#xA0;=&amp;#xA0;7000&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;//&amp;#x6B64;&amp;#x5904;&amp;#x586B;&amp;#x5199;&amp;#x5BA2;&amp;#x6237;&amp;#x7AEF;&amp;#x76D1;&amp;#x542C;&amp;#x7684;&amp;#x670D;&amp;#x52A1;&amp;#x7AEF;&amp;#x7AEF;&amp;#x53E3;&amp;#x53F7;&lt;br&gt;vhost_http_port&amp;#xA0;=&amp;#xA0;8080&amp;#xA0;//&amp;#x6B64;&amp;#x5904;&amp;#x586B;&amp;#x5199;&amp;#x7528;&amp;#x6237;&amp;#x8BBF;&amp;#x95EE;&amp;#x7684;&amp;#x7AEF;&amp;#x53E3;&amp;#x53F7;&lt;br&gt;&lt;br&gt;&amp;#x5BA2;&amp;#x6237;&amp;#x7AEF;&amp;#x914D;&amp;#x7F6E;(frpc.ini)&amp;#xFF1A;&lt;br&gt;[common]&lt;br&gt;server_addr&amp;#xA0;=&amp;#xA0;x.x.x.x&amp;#xA0;//&amp;#x6B64;&amp;#x5904;&amp;#x586B;&amp;#x5199;&amp;#x670D;&amp;#x52A1;&amp;#x7AEF;&amp;#xA0;IP&amp;#xA0;&amp;#x5730;&amp;#x5740;&lt;br&gt;server_port&amp;#xA0;=&amp;#xA0;7000&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;//&amp;#x6B64;&amp;#x5904;&amp;#x586B;&amp;#x5199;&amp;#x670D;&amp;#x52A1;&amp;#x7AEF;&amp;#x914D;&amp;#x7F6E;&amp;#x7684;bind_port&lt;br&gt;&lt;br&gt;[web]&lt;br&gt;&lt;span&gt;type&lt;/span&gt;&amp;#xA0;=&amp;#xA0;http&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;//&amp;#x6B64;&amp;#x5904;&amp;#x89C4;&amp;#x5B9A;&amp;#x8F6C;&amp;#x53D1;&amp;#x8BF7;&amp;#x6C42;&amp;#x7684;&amp;#x534F;&amp;#x8BAE;&amp;#x7C7B;&amp;#x578B;&lt;br&gt;local_port&amp;#xA0;=&amp;#xA0;80&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;//&amp;#x6B64;&amp;#x5904;&amp;#x89C4;&amp;#x5B9A;&amp;#x672C;&amp;#x5730;&amp;#x670D;&amp;#x52A1;&amp;#x542F;&amp;#x52A8;&amp;#x7684;&amp;#x5730;&amp;#x5740;&lt;br&gt;custom_domains&amp;#xA0;=&amp;#xA0;www.example.com&amp;#xA0;&amp;#xA0;&amp;#xA0;//&amp;#x6B64;&amp;#x5904;&amp;#x53EF;&amp;#x4EE5;&amp;#x586B;&amp;#x5199;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x57DF;&amp;#x540D;&amp;#xFF08;&amp;#x9700;&amp;#x8981;&amp;#x5728;&amp;#xA0;IP&amp;#xA0;&amp;#x5730;&amp;#x5740;&amp;#x4E0B;&amp;#x914D;&amp;#x7F6E;&amp;#x57DF;&amp;#x540D;&amp;#x89E3;&amp;#x6790;&amp;#xFF09;</span><br></pre></td></tr></table></figure>
+
+<p>当我们配置完上述的文件后，用户的访问请求将会经过如下的步骤：</p>
+<p>用户的请求将会经过域名解析，公网端口的转发以及内网主机的监听三个步骤成功将请求发送到对应的内网服务，当然 frp 相较于花生壳提供了更多的自定义配置项，此处不做详细讲解，有兴趣的读者可以访问：frp 中文文档(<a target="_blank" rel="noopener" href="https://gofrp.org/docs/examples/">https://gofrp.org/docs/examples/</a>)</p>
+<p>当我们使用 frp 去配置我们自己的内网穿透服务时，我们可以使用一台服务器为大量的内网主机提供公网访问的功能，以此来实现公网 IP 的复用，其原理与上文提到的 PAT 端口多路复用技术相类似，当我们临时需要使用服务器时，只需要向拥有公网服务器的朋友申请两个闲置端口即可。</p>
+<h2 id="frp-核心代码解析"><a href="#frp-核心代码解析" class="headerlink" title="frp 核心代码解析"></a>frp 核心代码解析</h2><p>本文以 http 请求为例解析当一个公网请求发送到 frp 服务器后究竟会经过哪些步骤</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;&lt;span&gt;func&lt;/span&gt;&amp;#xA0;&lt;span&gt;runServer&lt;/span&gt;&lt;span&gt;(cfg&amp;#xA0;config.ServerCommonConf)&lt;/span&gt;&amp;#xA0;&lt;span&gt;(err&amp;#xA0;error)&lt;/span&gt;&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;log.InitLog(cfg.LogWay,&amp;#xA0;cfg.LogFile,&amp;#xA0;cfg.LogLevel,&amp;#xA0;cfg.LogMaxDays,&amp;#xA0;cfg.DisableLogColor)&lt;br&gt;&lt;br&gt;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;cfgFile&amp;#xA0;!=&amp;#xA0;&lt;span&gt;&quot;&quot;&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;log.Info(&lt;span&gt;&quot;frps&amp;#xA0;uses&amp;#xA0;config&amp;#xA0;file:&amp;#xA0;%s&quot;&lt;/span&gt;,&amp;#xA0;cfgFile)&lt;br&gt;&amp;#xA0;&#125;&amp;#xA0;&lt;span&gt;else&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;log.Info(&lt;span&gt;&quot;frps&amp;#xA0;uses&amp;#xA0;command&amp;#xA0;line&amp;#xA0;arguments&amp;#xA0;for&amp;#xA0;config&quot;&lt;/span&gt;)&lt;br&gt;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;!important&amp;#xA0;&amp;#x6838;&amp;#x5FC3;&amp;#x4EE3;&amp;#x7801;1&lt;/span&gt;&lt;br&gt;&amp;#xA0;svr,&amp;#xA0;err&amp;#xA0;:=&amp;#xA0;server.NewService(cfg)&lt;br&gt;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;err&amp;#xA0;!=&amp;#xA0;&lt;span&gt;nil&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;return&lt;/span&gt;&amp;#xA0;err&lt;br&gt;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;log.Info(&lt;span&gt;&quot;frps&amp;#xA0;started&amp;#xA0;successfully&quot;&lt;/span&gt;)&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;!important&amp;#xA0;&amp;#x6838;&amp;#x5FC3;&amp;#x4EE3;&amp;#x7801;2&lt;/span&gt;&lt;br&gt;&amp;#xA0;svr.Run()&lt;br&gt;&amp;#xA0;&lt;span&gt;return&lt;/span&gt;&lt;br&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>frp/cmd/frps/root.go</code>中</p>
+<ul>
+<li>核心代码 1: server.NewService() 方法对我们在 <code>frps</code> 中的配置进行解析，初始化 frp 服务端</li>
+<li>核心代码 2: serever.Run() 方法启动 frp 服务</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;for&lt;/span&gt;&#123;&amp;#xA0;&amp;#xA0;&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;!important&amp;#xA0;&amp;#x6838;&amp;#x5FC3;&amp;#x4EE3;&amp;#x7801;3&lt;/span&gt;&lt;br&gt;conn,&amp;#xA0;session,&amp;#xA0;err&amp;#xA0;:=&amp;#xA0;svr.login()&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;err&amp;#xA0;!=&amp;#xA0;&lt;span&gt;nil&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;xl.Warn(&lt;span&gt;&quot;login&amp;#xA0;to&amp;#xA0;server&amp;#xA0;failed:&amp;#xA0;%v&quot;&lt;/span&gt;,&amp;#xA0;err)&lt;br&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;if&amp;#xA0;login_fail_exit&amp;#xA0;is&amp;#xA0;true,&amp;#xA0;just&amp;#xA0;exit&amp;#xA0;this&amp;#xA0;program&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;otherwise&amp;#xA0;sleep&amp;#xA0;a&amp;#xA0;while&amp;#xA0;and&amp;#xA0;try&amp;#xA0;again&amp;#xA0;to&amp;#xA0;connect&amp;#xA0;to&amp;#xA0;server&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;svr.cfg.LoginFailExit&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;return&lt;/span&gt;&amp;#xA0;err&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;util.RandomSleep(&lt;span&gt;10&lt;/span&gt;*time.Second,&amp;#xA0;&lt;span&gt;0.9&lt;/span&gt;,&amp;#xA0;&lt;span&gt;1.1&lt;/span&gt;)&lt;br&gt;&amp;#xA0;&amp;#xA0;&#125;&amp;#xA0;&lt;span&gt;else&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;login&amp;#xA0;success&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;!important&amp;#xA0;&amp;#x6838;&amp;#x5FC3;&amp;#x4EE3;&amp;#x7801;4&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;ctl&amp;#xA0;:=&amp;#xA0;NewControl(svr.ctx,&amp;#xA0;svr.runID,&amp;#xA0;conn,&amp;#xA0;session,&amp;#xA0;svr.cfg,&amp;#xA0;svr.pxyCfgs,&amp;#xA0;svr.visitorCfgs,&amp;#xA0;svr.serverUDPPort,&amp;#xA0;svr.authSetter)&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;ctl.Run()&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;svr.ctlMu.Lock()&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;svr.ctl&amp;#xA0;=&amp;#xA0;ctl&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;svr.ctlMu.Unlock()&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;break&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&#125;&lt;br&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>frp/cmd/client/service.go</code>中</p>
+<ul>
+<li>核心代码 3: for 循环不断去发起和服务端的连接，失败后会再次发起</li>
+<li>核心代码 4: 连接成功后，客户端会使用连接的信息调用 NewControl()</li>
+</ul>
+<p><strong>frps 发起连接</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;&lt;span&gt;func&lt;/span&gt;&amp;#xA0;&lt;span&gt;(pxy&amp;#xA0;*BaseProxy)&lt;/span&gt;&amp;#xA0;&lt;span&gt;GetWorkConnFromPool&lt;/span&gt;&lt;span&gt;(src,&amp;#xA0;dst&amp;#xA0;net.Addr)&lt;/span&gt;&amp;#xA0;&lt;span&gt;(workConn&amp;#xA0;net.Conn,&amp;#xA0;err&amp;#xA0;error)&lt;/span&gt;&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;xl&amp;#xA0;:=&amp;#xA0;xlog.FromContextSafe(pxy.ctx)&lt;br&gt;&amp;#xA0;&lt;span&gt;//&amp;#xA0;try&amp;#xA0;all&amp;#xA0;connections&amp;#xA0;from&amp;#xA0;the&amp;#xA0;pool&lt;/span&gt;&lt;br&gt;&amp;#xA0;&lt;span&gt;for&lt;/span&gt;&amp;#xA0;i&amp;#xA0;:=&amp;#xA0;&lt;span&gt;0&lt;/span&gt;;&amp;#xA0;i&amp;#xA0;&lt; pxy.poolcount+&lt;span&gt;1;&amp;#xA0;i++&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;!important&amp;#xA0;&amp;#x6838;&amp;#x5FC3;&amp;#x4EE3;&amp;#x7801;5&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;workConn,&amp;#xA0;err&amp;#xA0;=&amp;#xA0;pxy.getWorkConnFn();&amp;#xA0;err&amp;#xA0;!=&amp;#xA0;&lt;span&gt;nil&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;xl.Warn(&lt;span&gt;&quot;failed&amp;#xA0;to&amp;#xA0;get&amp;#xA0;work&amp;#xA0;connection:&amp;#xA0;%v&quot;&lt;/span&gt;,&amp;#xA0;err)&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;return&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;&amp;#xA0;xl.Debug(&lt;span&gt;&quot;get&amp;#xA0;a&amp;#xA0;new&amp;#xA0;work&amp;#xA0;connection:&amp;#xA0;[%s]&quot;&lt;/span&gt;,&amp;#xA0;workConn.RemoteAddr().String())&lt;br&gt;&amp;#xA0;&amp;#xA0;xl.Spawn().AppendPrefix(pxy.GetName())&lt;br&gt;&amp;#xA0;&amp;#xA0;workConn&amp;#xA0;=&amp;#xA0;frpNet.NewContextConn(pxy.ctx,&amp;#xA0;workConn)&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;......&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;!important&amp;#xA0;&amp;#x6838;&amp;#x5FC3;&amp;#x4EE3;&amp;#x7801;6&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;err&amp;#xA0;:=&amp;#xA0;msg.WriteMsg(workConn,&amp;#xA0;&amp;msg.StartWorkConn&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;ProxyName:&amp;#xA0;pxy.GetName(),&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;SrcAddr:&amp;#xA0;&amp;#xA0;&amp;#xA0;srcAddr,&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;SrcPort:&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;uint16&lt;/span&gt;(srcPort),&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;DstAddr:&amp;#xA0;&amp;#xA0;&amp;#xA0;dstAddr,&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;DstPort:&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;uint16&lt;/span&gt;(dstPort),&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;Error:&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;&quot;&quot;&lt;/span&gt;,&lt;br&gt;&amp;#xA0;&amp;#xA0;&#125;)&lt;br&gt;&amp;#xA0;&amp;#xA0;&#125;&lt;br&gt;&#125;&lt;br&gt;&lt;/ pxy.poolcount+&lt;span&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>frp/server/proxy.go</code>中</p>
+<ul>
+<li>核心代码 5: <code>frps</code> 从多个连接中通过依次遍历的方式来获取第一个成功获取到的连接</li>
+<li>核心代码 6: <code>frps</code> 通过获取到的连接向 frpc 发出 &amp;msg.StartWorkConn 的消息，告诉 <code>frpc</code> 建立连接的相应信息</li>
+</ul>
+<p><strong>frpc 响应连接</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;&lt;span&gt;func&lt;/span&gt;&amp;#xA0;&lt;span&gt;(pxy&amp;#xA0;*TCPProxy)&lt;/span&gt;&amp;#xA0;&lt;span&gt;InWorkConn&lt;/span&gt;&lt;span&gt;(conn&amp;#xA0;net.Conn,&amp;#xA0;m&amp;#xA0;*msg.StartWorkConn)&lt;/span&gt;&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;!important&amp;#xA0;&amp;#x6838;&amp;#x5FC3;&amp;#x4EE3;&amp;#x7801;7&lt;/span&gt;&lt;br&gt;&amp;#xA0;HandleTCPWorkConnection(pxy.ctx,&amp;#xA0;&amp;pxy.cfg.LocalSvrConf,&amp;#xA0;pxy.proxyPlugin,&amp;#xA0;pxy.cfg.GetBaseInfo(),&amp;#xA0;pxy.limiter,&lt;br&gt;&amp;#xA0;&amp;#xA0;conn,&amp;#xA0;[]&lt;span&gt;byte&lt;/span&gt;(pxy.clientCfg.Token),&amp;#xA0;m)&lt;br&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>frp/client/proxy/proxy.go</code>中</p>
+<ul>
+<li>核心代码 7: <code> frpc</code> 接收到 <code>frps</code> 的信息后发起 TCP 连接</li>
+</ul>
+<p><strong>frps 发送消息</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;&lt;span&gt;func&lt;/span&gt;&amp;#xA0;&lt;span&gt;(ctl&amp;#xA0;*Control)&lt;/span&gt;&amp;#xA0;&lt;span&gt;writer&lt;/span&gt;&lt;span&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;xl&amp;#xA0;:=&amp;#xA0;ctl.xl&lt;br&gt;&amp;#xA0;&lt;span&gt;defer&lt;/span&gt;&amp;#xA0;&lt;span&gt;&lt;span&gt;func&lt;/span&gt;&lt;span&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;err&amp;#xA0;:=&amp;#xA0;&lt;span&gt;recover&lt;/span&gt;();&amp;#xA0;err&amp;#xA0;!=&amp;#xA0;&lt;span&gt;nil&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;xl.Error(&lt;span&gt;&quot;panic&amp;#xA0;error:&amp;#xA0;%v&quot;&lt;/span&gt;,&amp;#xA0;err)&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;xl.Error(&lt;span&gt;string&lt;/span&gt;(debug.Stack()))&lt;br&gt;&amp;#xA0;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;&#125;()&lt;br&gt;&lt;br&gt;&amp;#xA0;&lt;span&gt;defer&lt;/span&gt;&amp;#xA0;ctl.allShutdown.Start()&lt;br&gt;&amp;#xA0;&lt;span&gt;defer&lt;/span&gt;&amp;#xA0;ctl.writerShutdown.Done()&lt;br&gt;&lt;br&gt;&amp;#xA0;encWriter,&amp;#xA0;err&amp;#xA0;:=&amp;#xA0;crypto.NewWriter(ctl.conn,&amp;#xA0;[]&lt;span&gt;byte&lt;/span&gt;(ctl.serverCfg.Token))&lt;br&gt;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;err&amp;#xA0;!=&amp;#xA0;&lt;span&gt;nil&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;xl.Error(&lt;span&gt;&quot;crypto&amp;#xA0;new&amp;#xA0;writer&amp;#xA0;error:&amp;#xA0;%v&quot;&lt;/span&gt;,&amp;#xA0;err)&lt;br&gt;&amp;#xA0;&amp;#xA0;ctl.allShutdown.Start()&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;return&lt;/span&gt;&lt;br&gt;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;&lt;span&gt;for&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;m,&amp;#xA0;ok&amp;#xA0;:=&amp;#xA0;&lt;-ctl.sendch&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;!ok&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;xl.Info(&lt;span&gt;&quot;control&amp;#xA0;writer&amp;#xA0;is&amp;#xA0;closing&quot;&lt;/span&gt;)&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;return&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;//&amp;#xA0;!important&amp;#xA0;&amp;#x6838;&amp;#x5FC3;&amp;#x4EE3;&amp;#x7801;8&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;err&amp;#xA0;:=&amp;#xA0;msg.WriteMsg(encWriter,&amp;#xA0;m);&amp;#xA0;err&amp;#xA0;!=&amp;#xA0;&lt;span&gt;nil&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;xl.Warn(&lt;span&gt;&quot;write&amp;#xA0;message&amp;#xA0;to&amp;#xA0;control&amp;#xA0;connection&amp;#xA0;error:&amp;#xA0;%v&quot;&lt;/span&gt;,&amp;#xA0;err)&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;return&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;&#125;&lt;br&gt;&#125;&lt;br&gt;&lt;/-ctl.sendch</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>frp/server/control.go</code>中</p>
+<ul>
+<li>核心代码 8: <code>frps</code> 发送信息到 crypto.NewWriter() 创建的 writer 中</li>
+</ul>
+<p><strong>frpc 接收和响应</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;//&amp;#xA0;!important&amp;#xA0;&amp;#x6838;&amp;#x5FC3;&amp;#x4EE3;&amp;#x7801;9&lt;/span&gt;&lt;br&gt;&lt;span&gt;&lt;span&gt;func&lt;/span&gt;&amp;#xA0;&lt;span&gt;(ctl&amp;#xA0;*Control)&lt;/span&gt;&amp;#xA0;&lt;span&gt;reader&lt;/span&gt;&lt;span&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;xl&amp;#xA0;:=&amp;#xA0;ctl.xl&lt;br&gt;&amp;#xA0;&lt;span&gt;defer&lt;/span&gt;&amp;#xA0;&lt;span&gt;&lt;span&gt;func&lt;/span&gt;&lt;span&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;err&amp;#xA0;:=&amp;#xA0;&lt;span&gt;recover&lt;/span&gt;();&amp;#xA0;err&amp;#xA0;!=&amp;#xA0;&lt;span&gt;nil&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;xl.Error(&lt;span&gt;&quot;panic&amp;#xA0;error:&amp;#xA0;%v&quot;&lt;/span&gt;,&amp;#xA0;err)&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;xl.Error(&lt;span&gt;string&lt;/span&gt;(debug.Stack()))&lt;br&gt;&amp;#xA0;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;&#125;()&lt;br&gt;&amp;#xA0;&lt;span&gt;defer&lt;/span&gt;&amp;#xA0;ctl.readerShutdown.Done()&lt;br&gt;&amp;#xA0;&lt;span&gt;defer&lt;/span&gt;&amp;#xA0;&lt;span&gt;close&lt;/span&gt;(ctl.closedCh)&lt;br&gt;&lt;br&gt;&amp;#xA0;encReader&amp;#xA0;:=&amp;#xA0;crypto.NewReader(ctl.conn,&amp;#xA0;[]&lt;span&gt;byte&lt;/span&gt;(ctl.clientCfg.Token))&lt;br&gt;&amp;#xA0;&lt;span&gt;for&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;m,&amp;#xA0;err&amp;#xA0;:=&amp;#xA0;msg.ReadMsg(encReader)&lt;br&gt;&amp;#xA0;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;err&amp;#xA0;!=&amp;#xA0;&lt;span&gt;nil&lt;/span&gt;&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;if&lt;/span&gt;&amp;#xA0;err&amp;#xA0;==&amp;#xA0;io.EOF&amp;#xA0;&#123;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;xl.Debug(&lt;span&gt;&quot;read&amp;#xA0;from&amp;#xA0;control&amp;#xA0;connection&amp;#xA0;EOF&quot;&lt;/span&gt;)&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;return&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;xl.Warn(&lt;span&gt;&quot;read&amp;#xA0;error:&amp;#xA0;%v&quot;&lt;/span&gt;,&amp;#xA0;err)&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;ctl.conn.Close()&lt;br&gt;&amp;#xA0;&amp;#xA0;&amp;#xA0;&lt;span&gt;return&lt;/span&gt;&lt;br&gt;&amp;#xA0;&amp;#xA0;&#125;&lt;br&gt;&amp;#xA0;&amp;#xA0;ctl.readCh&amp;#xA0;&lt;- m&lt;br&gt;&amp;#xA0;&#125;&lt;br&gt;&#125;&lt;br&gt;&lt;/- m</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>核心代码 9: <code>frpc</code> 读取 <code>frps</code> 转发的信息</li>
+</ul>
+<p>到这里，我们的 <code>frps</code> 已经成功将公网中接收到的请求转发到 <code>frpc</code> 相应的端口了，这就是一个最简单的请求通过 frp 进行代理转发的流程。</p>
+<p>本文所介绍的内网穿透技术相关的实现方式其实在我们的日常开发生活中有更多的使用场景，当我们深入了解了当前 IP 地址以及内外网的实现方式后，我们不难发现，当我们将内网穿透的图片稍加修改后就成为了我们常用的另一种功能的实现方式(VPN 实现原理)：</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp">frp 源码地址</a><br><a target="_blank" rel="noopener" href="https://jiajunhuang.com/articles/2019_06_19-frp_source_code_part2.md.html">frp 源码阅读与分析(二)：TCP 内网穿透的实现</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/07/06/Q7oyfaOu8Ii_5RQqs4RMPQ/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          色
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/07/06/1673329547503/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">跨境电商独立站有哪些？是入驻平台好还是独立站好？</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E7%BD%91-IP-%E4%B8%8E%E5%86%85%E7%BD%91-IP"><span class="nav-number">1.</span> <span class="nav-text">公网 IP 与内网 IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="nav-number">2.</span> <span class="nav-text">内网穿透</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#frp-%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">frp 核心代码解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> YAKJS </p>
+	      <p id="copyRightEn">Copyright &copy; 2012 - 2023 YAKJS All Rights Reserved.</p>
+	      
+	      
+  		   	<p id="copyRightCn">Mr.APIS hold copyright</p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            YAKJS
+          </div>
+          <div class="panel-body">
+            Copyright © 2023 Mr.APIS All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
