@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Dr. Pen A7",
+    "description": "The classic and reliable choice for effective microneedling treatments.",
+    "image": "images/dr-pen-a7.jpg",
+    "amazonLink": "YOUR_AMAZON_PRODUCT_LINK_A7"
+  },
+  {
+    "name": "Dr. Pen M8",
+    "description": "The latest model with a more powerful motor and ergonomic design.",
+    "image": "images/dr-pen-m8.jpg",
+    "amazonLink": "YOUR_AMAZON_PRODUCT_LINK_M8"
+  }
+]
